@@ -19,21 +19,21 @@ export const ThemeSwitcher = () => {
         onClick={() => switchTheme("light")}
         className={`bg-transparent font-medium uppercase cursor-pointer transition-all duration-200 scale-95 rounded border-0 inline-block select-none tracking-wider ${
           theme === "light"
-            ? "text-(--color-text-primary)"
-            : "text-(--color-text-muted) hover:text-(--color-text-primary)"
+            ? "text-(--color-primary)"
+            : "text-(--color-muted) hover:text-(--color-primary)"
         }`}
       >
         Light
       </button>
-      <span className="text-[10px] select-none text-(--color-text-muted) font-medium uppercase tracking-wider mx-2">
+      <span className="text-[10px] select-none text-(--color-muted) font-medium uppercase tracking-wider mx-2">
         |
       </span>
       <button
         onClick={() => switchTheme("dark")}
         className={`bg-transparent font-medium uppercase cursor-pointer transition-all duration-200 scale-95 rounded border-0 inline-block select-none tracking-wider ${
           theme === "dark"
-            ? "text-(--color-text-primary)"
-            : "text-(--color-text-muted) hover:text-(--color-text-primary)"
+            ? "text-(--color-primary)"
+            : "text-(--color-muted) hover:text-(--color-primary)"
         }`}
       >
         Dark
