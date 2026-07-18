@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div className="flex items-center justify-center"></div>;
+  return <div className="flex-1"></div>;
 }
