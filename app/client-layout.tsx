@@ -12,9 +12,6 @@ export default function ClientLayout({
     <ThemeProvider>
       {/* Main content */}
       <main className="flex flex-col min-h-screen">{children}</main>
-
-      {/* Theme switcher is placed here to be accessible on all pages */}
-      <ThemeSwitcher />
     </ThemeProvider>
   );
 }
