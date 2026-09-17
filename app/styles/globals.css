@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 :root {
+  --header-height: 3rem;
+  --footer-height: 3rem;
+
   --color-background: rgb(0, 0, 0);
   --color-foreground: rgb(255, 255, 255);
 
@@ -26,17 +29,19 @@
   --color-overlay: rgba(255, 255, 255, 0.5);
 
   --color-border: rgba(0, 0, 0, 0.1);
-
-  --font-geist-sans: "Geist Sans", sans-serif;
-  --font-geist-mono: "Geist Mono", monospace;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-size: 0.75rem;
+  font-size: 13px;
   font-family: var(--font-geist-mono), monospace;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+::selection {
+  background-color: var(--color-foreground);
+  color: var(--color-background);
 }
