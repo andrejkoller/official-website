@@ -28,15 +28,16 @@ export const websiteLinksConfig: HeaderLink[] = [
     hasTargetBlank: true,
     hasRelNoopener: true,
   },
+  {
+    key: "imprint",
+    label: "Imprint",
+    url: "/imprint",
+    hasTargetBlank: false,
+    hasRelNoopener: false,
+  },
 ];
 
-export const imprintLinkConfig: HeaderLink = {
-  key: "imprint",
-  label: "Imprint",
-  url: "/imprint",
-};
-
-export const getHeaderLinkClassName = (isActive: boolean) =>
-  isActive
+export const getHeaderLinkClassName = (link: HeaderLink) =>
+  link.key == "official-website"
     ? "bg-transparent text-(--color-primary) font-medium cursor-pointer scale-95 inline-block tracking-wider"
     : "bg-transparent text-(--color-muted) font-medium cursor-pointer hover:text-(--color-primary) transition-colors duration-200 scale-95 inline-block tracking-wider";

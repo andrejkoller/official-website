@@ -3,9 +3,9 @@
 import {
   getHeaderLinkClassName,
   websiteLinksConfig,
-  imprintLinkConfig,
 } from "@/configs/header-links.config";
 import { MobileSidebar } from "@/components/mobile-sidebar";
+import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -18,7 +18,7 @@ export const Header = () => {
   return (
     <>
       <header
-        className="flex justify-between items-center h-(--header-height) px-6"
+        className="sticky top-0 z-40 flex justify-between items-center h-(--header-height) bg-(--color-background) px-6"
         aria-label="Site header"
       >
         <div className="flex items-center gap-6">
@@ -38,9 +38,7 @@ export const Header = () => {
                   href={link.url}
                   target={link.hasTargetBlank ? "_blank" : undefined}
                   rel={link.hasRelNoopener ? "noopener noreferrer" : undefined}
-                  className={getHeaderLinkClassName(
-                    link.key === "official-website" && pathname === "/",
-                  )}
+                  className={getHeaderLinkClassName(link)}
                 >
                   {link.label}
                 </Link>
@@ -49,12 +47,7 @@ export const Header = () => {
           </ul>
         </div>
 
-        <Link
-          href={imprintLinkConfig.url}
-          className={getHeaderLinkClassName(pathname === imprintLinkConfig.url)}
-        >
-          {imprintLinkConfig.label}
-        </Link>
+        <ThemeSwitcher />
       </header>
 
       <MobileSidebar

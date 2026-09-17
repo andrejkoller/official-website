@@ -3,7 +3,6 @@
 import {
   getHeaderLinkClassName,
   websiteLinksConfig,
-  imprintLinkConfig,
 } from "@/configs/header-links.config";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -49,9 +48,7 @@ export const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
                   href={link.url}
                   target={link.hasTargetBlank ? "_blank" : undefined}
                   rel={link.hasRelNoopener ? "noopener noreferrer" : undefined}
-                  className={getHeaderLinkClassName(
-                    link.key === "official-website" && pathname === "/",
-                  )}
+                  className={getHeaderLinkClassName(link)}
                   onClick={onClose}
                 >
                   {link.label}
@@ -60,18 +57,6 @@ export const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
             ))}
           </ul>
         </nav>
-
-        <div className="border-t border-(--color-border) px-6 py-4">
-          <Link
-            href={imprintLinkConfig.url}
-            className={getHeaderLinkClassName(
-              pathname === imprintLinkConfig.url,
-            )}
-            onClick={onClose}
-          >
-            {imprintLinkConfig.label}
-          </Link>
-        </div>
       </aside>
     </>
   );

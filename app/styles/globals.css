@@ -2,7 +2,6 @@
 
 :root {
   --header-height: 3rem;
-  --footer-height: 3rem;
 
   --color-background: rgb(0, 0, 0);
   --color-foreground: rgb(255, 255, 255);
@@ -39,6 +38,11 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 ::selection {
