@@ -1,20 +1,8 @@
 "use client";
 
 import { useTheme } from "@/components/theme/use-theme";
+import { MoonIcon, SunIcon } from "lucide-react";
 import { useEffect } from "react";
-import type { Theme } from "./types";
-
-const themeOptions: { label: string; value: Theme }[] = [
-  { label: "Light", value: "light" },
-  { label: "Dark", value: "dark" },
-];
-
-const getThemeButtonClassName = (isActive: boolean) =>
-  `bg-transparent font-medium cursor-pointer transition-all duration-200 scale-95 rounded border-0 inline-block select-none tracking-wider ${
-    isActive
-      ? "text-(--color-primary)"
-      : "text-(--color-muted) hover:text-(--color-primary)"
-  }`;
 
 export const ThemeSwitcher = () => {
   const { theme, switchTheme, mounted } = useTheme();
@@ -32,22 +20,18 @@ export const ThemeSwitcher = () => {
   if (!mounted) return null;
 
   return (
-    <div className="flex items-center">
-      {themeOptions.map((option, index) => (
-        <div key={option.value} className="flex items-center">
-          {index > 0 && (
-            <span className="text-[10px] select-none text-(--color-muted) font-medium tracking-wider mx-2">
-              |
-            </span>
-          )}
-          <button
-            onClick={switchTheme}
-            className={getThemeButtonClassName(theme === option.value)}
-          >
-            {option.label}
-          </button>
-        </div>
-      ))}
-    </div>
+    <button
+      onClick={switchTheme}
+      aria-label={
+        theme === "light" ? "Switch to dark theme" : "Switch to light theme"
+      }
+      className="flex items-center justify-center bg-transparent border-0 cursor-pointer text-(--color-muted) hover:text-(--color-primary) transition-colors duration-200"
+    >
+      {theme === "light" ? (
+        <SunIcon className="size-4.5" />
+      ) : (
+        <MoonIcon className="size-4.5" />
+      )}
+    </button>
   );
 };
