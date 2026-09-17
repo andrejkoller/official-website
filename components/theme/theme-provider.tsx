@@ -40,14 +40,14 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     document.body.classList.add("theme-transitions");
   }, []);
 
-  const toggleTheme = useCallback(() => {
+  const switchTheme = useCallback(() => {
     const newTheme = theme === "light" ? "dark" : "light";
     localStorage.setItem("theme", newTheme);
     window.dispatchEvent(new StorageEvent("storage"));
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, mounted }}>
+    <ThemeContext.Provider value={{ theme, switchTheme, mounted }}>
       {children}
     </ThemeContext.Provider>
   );

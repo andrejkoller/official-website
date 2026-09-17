@@ -1,7 +1,8 @@
 "use client";
 
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 
 export default function ClientLayout({
   children,
@@ -10,8 +11,13 @@ export default function ClientLayout({
 }>) {
   return (
     <ThemeProvider>
-      {/* Main content */}
-      <main className="flex flex-col min-h-screen">{children}</main>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-1" aria-label="Main content">
+          {children}
+        </main>
+        <Footer />
+      </div>
     </ThemeProvider>
   );
 }
