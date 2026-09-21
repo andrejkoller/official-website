@@ -31,7 +31,7 @@ export const websiteLinksConfig: HeaderLink[] = [
   {
     key: "privacy-policy",
     label: "Privacy Policy",
-    url: "/privacy",
+    url: "/privacy-policy",
     hasTargetBlank: false,
     hasRelNoopener: false,
   },
