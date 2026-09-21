@@ -38,6 +38,7 @@ export default function ImprintPage() {
           </p>
         </div>
 
+        {/* VAT: re-enable once registered with the Finanzamt (§ 19 UStG)
         <div>
           <h2 className="mb-3 font-medium">VAT</h2>
 
@@ -47,6 +48,7 @@ export default function ImprintPage() {
             regulation.
           </p>
         </div>
+        */}
 
         <div>
           <h2 className="mb-3 font-medium">Dispute Resolution</h2>
