@@ -29,6 +29,13 @@ export const websiteLinksConfig: HeaderLink[] = [
     hasRelNoopener: true,
   },
   {
+    key: "privacy-policy",
+    label: "Privacy Policy",
+    url: "/privacy",
+    hasTargetBlank: false,
+    hasRelNoopener: false,
+  },
+  {
     key: "imprint",
     label: "Imprint",
     url: "/imprint",

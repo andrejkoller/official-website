@@ -30,6 +30,10 @@
   --color-border: rgba(0, 0, 0, 0.1);
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-background);
   color: var(--color-foreground);
