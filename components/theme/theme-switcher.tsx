@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "@/components/theme/use-theme";
+import { useTheme } from "./use-theme";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useEffect } from "react";
 

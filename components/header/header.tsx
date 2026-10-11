@@ -3,17 +3,14 @@
 import {
   getHeaderLinkClassName,
   websiteLinksConfig,
-} from "@/configs/header-links.config";
+} from "@/configs/header.config";
 import { MobileSidebar } from "@/components/mobile-sidebar";
-import { ThemeSwitcher } from "@/components/theme/theme-switcher";
+import { ThemeSwitcher } from "@/components/theme";
 import Link from "next/link";
 import { useState } from "react";
-import { usePathname } from "next/navigation";
 
 export const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const pathname = usePathname();
 
   return (
     <>
