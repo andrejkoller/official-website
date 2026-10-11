@@ -3,9 +3,8 @@
 import {
   getHeaderLinkClassName,
   websiteLinksConfig,
-} from "@/configs/header-links.config";
+} from "@/configs/header.config";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 interface MobileSidebarProps {
   isOpen: boolean;
@@ -13,8 +12,6 @@ interface MobileSidebarProps {
 }
 
 export const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
-  const pathname = usePathname();
-
   return (
     <>
       {isOpen && (
