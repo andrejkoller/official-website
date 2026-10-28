@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useSyncExternalStore } from "react";
+import * as React from "react";
 import { ThemeContext } from "./theme-context";
 import type { Theme } from "./types";
 
@@ -25,23 +25,24 @@ const subscribe = (callback: () => void) => {
 };
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-  const mounted = useSyncExternalStore(
+  const theme = React.useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+  );
+  const mounted = React.useSyncExternalStore(
     () => () => {},
     () => true,
     () => false,
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
-  useEffect(() => {
-    document.body.classList.add("theme-transitions");
-  }, []);
-
-  const switchTheme = useCallback(() => {
-    const newTheme = theme === "light" ? "dark" : "light";
+  const switchTheme = React.useCallback(() => {
+    const newTheme: Theme = theme === "light" ? "dark" : "light";
+    document.documentElement.dataset.theme = newTheme;
     localStorage.setItem("theme", newTheme);
     window.dispatchEvent(new StorageEvent("storage"));
   }, [theme]);

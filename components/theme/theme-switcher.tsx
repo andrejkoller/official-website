@@ -1,15 +1,16 @@
 "use client";
 
+import * as React from "react";
 import { useTheme } from "./use-theme";
-import { MoonIcon, SunIcon } from "lucide-react";
-import { useEffect } from "react";
+import { cn } from "@/lib/merge-classes";
 
 export const ThemeSwitcher = () => {
   const { theme, switchTheme, mounted } = useTheme();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.shiftKey && e.key === "D") {
+        e.preventDefault();
         switchTheme();
       }
     };
@@ -21,17 +22,40 @@ export const ThemeSwitcher = () => {
 
   return (
     <button
-      onClick={switchTheme}
-      aria-label={
-        theme === "light" ? "Switch to dark theme" : "Switch to light theme"
-      }
-      className="flex items-center justify-center bg-transparent border-0 cursor-pointer text-(--color-muted) hover:text-(--color-primary) transition-colors duration-200"
-    >
-      {theme === "light" ? (
-        <SunIcon className="size-4.5" />
-      ) : (
-        <MoonIcon className="size-4.5" />
+      data-theme-toggle
+      onClick={() => switchTheme()}
+      className={cn(
+        "flex size-8 cursor-pointer items-center justify-center",
+        "rounded-lg transition-colors duration-200",
+        "hover:bg-(--accent)",
       )}
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode (Shift + D)`}
+    >
+      <ClassicIcon isDark={theme === "dark"} />
     </button>
   );
 };
+
+function ClassicIcon({
+  isDark,
+  className,
+}: {
+  isDark: boolean;
+  className?: string;
+}) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      fill="currentColor"
+      aria-hidden="true"
+      className={cn(
+        "size-4 origin-center",
+        "transition-transform duration-500 ease-out",
+        isDark ? "rotate-180" : "rotate-0",
+        className ?? "",
+      )}
+    >
+      <path d="M16 .5C7.4.5.5 7.4.5 16S7.4 31.5 16 31.5 31.5 24.6 31.5 16 24.6.5 16 .5zm0 28.1V3.4C23 3.4 28.6 9 28.6 16S23 28.6 16 28.6z" />
+    </svg>
+  );
+}
