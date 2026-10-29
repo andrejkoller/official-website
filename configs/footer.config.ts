@@ -1,10 +1,10 @@
-export interface HeaderLink {
+export interface FooterLink {
   key: string;
   title?: string;
   href: string;
 }
 
-export const headerConfig: HeaderLink[] = [
+export const footerConfig: FooterLink[] = [
   {
     key: "privacy-policy",
     title: "Privacy Policy",
