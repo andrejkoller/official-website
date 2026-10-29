@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function ImprintPage() {
   return (
     <div className="layout-container py-16 animate-fade-in">
-      <h1 className="mb-12 text-sm font-medium">Legal Notice / Imprint</h1>
+      <h1 className="mb-8 text-sm font-medium">Legal Notice / Imprint</h1>
 
       <div className="flex flex-col gap-8">
         <section>
@@ -94,7 +94,7 @@ export default function ImprintPage() {
         </section>
       </div>
 
-      <p className="mt-12 text-(--muted)">Last updated: September 2026</p>
+      <p className="mt-16 text-(--muted)">Last updated: September 2026</p>
     </div>
   );
 }
