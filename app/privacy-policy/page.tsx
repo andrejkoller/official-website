@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function PrivacyPage() {
   return (
-    <div className="layout-container py-16">
+    <div className="layout-container py-16 animate-fade-in">
       <h1 className="mb-12 text-sm font-medium">Privacy Policy</h1>
 
       <div className="flex flex-col gap-8">
@@ -25,7 +25,7 @@ export default function PrivacyPage() {
               E-Mail:{" "}
               <Link
                 href="mailto:contact@andrejkoller.com"
-                className="font-bold font-(family-name:--font-geist-mono) underline"
+                className="font-bold font-(family-name:--font-geist-mono) underline decoration-dashed"
               >
                 contact@andrejkoller.com
               </Link>

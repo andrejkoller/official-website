@@ -9,7 +9,14 @@ export default function ClientLayout({
 }>) {
   return (
     <ThemeProvider>
-      <main aria-label="Main content">{children}</main>
+      <div className="flex min-h-dvh flex-col">
+        <main
+          className="flex min-h-0 flex-1 flex-col"
+          aria-label="Main content"
+        >
+          {children}
+        </main>
+      </div>
     </ThemeProvider>
   );
 }
