@@ -32,7 +32,7 @@ export const Footer = () => {
           ))}
         </ul>
 
-        <Tooltip content="Toggle theme (Shift + D)" side="bottom">
+        <Tooltip content="Toggle theme (Shift + D)" side="top">
           <ThemeSwitcher />
         </Tooltip>
       </nav>
