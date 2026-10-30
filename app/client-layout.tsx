@@ -1,8 +1,6 @@
 "use client";
 
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { Footer } from "@/components/footer";
-import { usePathname } from "next/navigation";
 
 export default function ClientLayout({
   children,
@@ -19,9 +17,6 @@ export default function ClientLayout({
         >
           {children}
         </main>
-
-        {/* Footer */}
-        <Footer />
       </div>
     </ThemeProvider>
   );
