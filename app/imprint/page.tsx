@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ImprintPage() {
   return (
-    <div className="layout-container py-16 animate-fade-in">
+    <div className="layout-container py-16">
       <h1 className="mb-8 text-sm font-medium">Legal Notice / Imprint</h1>
 
       <div className="flex flex-col gap-8">
@@ -29,7 +29,7 @@ export default function ImprintPage() {
             E-Mail:{" "}
             <Link
               href="mailto:contact@andrejkoller.com"
-              className="font-bold font-(family-name:--font-geist-mono) underline decoration-dashed"
+              className="font-bold font-(family-name:--font-geist-mono) underline decoration-dotted"
             >
               contact@andrejkoller.com
             </Link>
